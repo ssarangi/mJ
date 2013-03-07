@@ -16,6 +16,7 @@ typedef union {
 	ClassDecl* classDecl;
 	VarDecl* varDecl;
 	MethodDecl* methodDecl;
+	MainMethodDecl* mainMethodDecl;
 	Stmt* stmt;
 	Exp* exp;
 	Argument* argument;
@@ -31,39 +32,40 @@ typedef union {
 #define	TStatic	264
 #define	TVoid	265
 #define	TMain	266
-#define	TBoolean	267
-#define	TInteger	268
-#define	TString	269
-#define	TTrue	270
-#define	TFalse	271
-#define	TThis	272
-#define	TNew	273
-#define	TPrintln	274
-#define	TReturn	275
-#define	TArrayLength	276
-#define	TId	277
-#define	TNumber	278
-#define	TText	279
-#define	TAssignment	280
-#define	TNot	281
-#define	TAnd	282
-#define	TOr	283
-#define	TLessThan	284
-#define	TGreaterThan	285
-#define	TDifferent	286
-#define	TEqual	287
-#define	TPlus	288
-#define	TMinus	289
-#define	TTimes	290
-#define	TMember	291
-#define	TLParen	292
-#define	TRParen	293
-#define	TLBracket	294
-#define	TRBracket	295
-#define	TLBraces	296
-#define	TRBraces	297
-#define	TComma	298
-#define	TSemiColon	299
+#define	TMainClass	267
+#define	TBoolean	268
+#define	TInteger	269
+#define	TString	270
+#define	TTrue	271
+#define	TFalse	272
+#define	TThis	273
+#define	TNew	274
+#define	TPrintln	275
+#define	TReturn	276
+#define	TArrayLength	277
+#define	TId	278
+#define	TNumber	279
+#define	TText	280
+#define	TAssignment	281
+#define	TNot	282
+#define	TAnd	283
+#define	TOr	284
+#define	TLessThan	285
+#define	TGreaterThan	286
+#define	TDifferent	287
+#define	TEqual	288
+#define	TPlus	289
+#define	TMinus	290
+#define	TTimes	291
+#define	TMember	292
+#define	TLParen	293
+#define	TRParen	294
+#define	TLBracket	295
+#define	TRBracket	296
+#define	TLBraces	297
+#define	TRBraces	298
+#define	TComma	299
+#define	TSemiColon	300
 
 
 extern YYSTYPE yylval;

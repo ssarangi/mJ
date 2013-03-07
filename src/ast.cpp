@@ -105,16 +105,20 @@ Type::Type(std::string name) : name(name)
 
 Program::Program(MainClass* mainClass, ClassList* classList) 
     : mainClass(mainClass)
-    , classList(classList) 
+    , classList(classList)
 {
 }
 
-MainClass::MainClass(Identifier* classId, Identifier* stringArrayId, StmtList* stmtList) 
-    : classId(classId) 
-    , stringArrayId(stringArrayId)
-    , stmtList(stmtList) 
+MainClass::MainClass(MainMethodDecl* mainMethod)
+    : ClassDecl(new Identifier("Main"), nullptr, new MethodList())
 {
-} 
+    methodList->insert(static_cast<MethodDecl*>(mainMethod));
+}
+
+MainMethodDecl::MainMethodDecl(Identifier* argIdentifier, StmtList* stmtList)
+    : MethodDecl(new Type("void"), new Identifier("main"), new ArgumentList(), new StmtList(), nullptr)
+{
+}
 
 NormalClassDecl::NormalClassDecl(Identifier* classId, VarList* varList, MethodList* methodList) 
     : ClassDecl(classId, varList, methodList) 

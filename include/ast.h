@@ -65,6 +65,7 @@ struct ThisExp;
 
 enum ClassDeclType
 {
+    MainClassType,
 	NormalClassType,
 	ExtendsClassType
 };
@@ -198,13 +199,17 @@ struct Program
 	std::shared_ptr<ClassList> classList;
 };
 
-struct MainClass 
+struct MainMethodDecl;
+
+struct MainClass : public ClassDecl
 {
-	MainClass(Identifier* classId, Identifier* stringArrayId, StmtList* stmtList);
+    MainClass(MainMethodDecl* mainMethod);
 
 	std::shared_ptr<Identifier> classId;
 	std::shared_ptr<Identifier> stringArrayId;
 	std::shared_ptr<StmtList>   stmtList;
+
+    virtual ClassDeclType getType() { return NormalClassType; }
 };
 
 struct NormalClassDecl : public ClassDecl 
@@ -231,13 +236,18 @@ struct VarDecl
 
 struct MethodDecl 
 {
-	MethodDecl(Type* type, Identifier* id, ArgumentList* argumentList, StmtList* stmtList, Exp* exp);
+    MethodDecl(Type* type, Identifier* id, ArgumentList* argumentList, StmtList* stmtList, Exp* exp);
 
-	std::shared_ptr<Type>          type;
-	std::shared_ptr<Identifier>   id;
-	std::shared_ptr<ArgumentList> argumentList;
-	std::shared_ptr<StmtList>     stmtList;
-	std::shared_ptr<Exp>          exp;
+    std::shared_ptr<Type>         type;
+    std::shared_ptr<Identifier>   id;
+    std::shared_ptr<ArgumentList> argumentList;
+    std::shared_ptr<StmtList>     stmtList;
+    std::shared_ptr<Exp>          exp;
+};
+
+struct MainMethodDecl : public MethodDecl
+{
+    MainMethodDecl(Identifier* argIdentifier, StmtList* stmtList);
 };
 
 struct Argument 
@@ -477,4 +487,3 @@ struct ThisExp : public Exp
 };
 
 #endif // __AST_H__
-

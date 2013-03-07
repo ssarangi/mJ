@@ -23,7 +23,7 @@ alphanum ({alpha}|{digit})
 %%
 
 	/* Reserved words */
-"if"												return TIf;
+"if"											return TIf;
 "else"											return TElse;
 "while"											return TWhile;
 "class"											return TClass;
@@ -32,14 +32,15 @@ alphanum ({alpha}|{digit})
 "static"										return TStatic;
 "void"											return TVoid;
 "main"											return TMain;
+"Main"                                          return TMainClass;
 "boolean"										return TBoolean;
-"int"												return TInteger;
+"int"											return TInteger;
 "String"										return TString;
 "true"											return TTrue;
 "false"											return TFalse;
 "this"											return TThis;
 "new"					    					return TNew;
-"System.out.println"				return TPrintln;
+"System.out.println"							return TPrintln;
 "return"										return TReturn;
 "length"										return TArrayLength;
 
