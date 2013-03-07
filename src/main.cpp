@@ -30,8 +30,11 @@ int main(int ac, char** av)
         if(file) 
         {
             std::cout << "Parsing phase" << std::endl;
-            if(yyparse()) return 1;
-            if(!only_parse) {
+            if(yyparse())
+                return 1;
+            
+            if(!only_parse) 
+            {
                 std::cout << "Semantic analysis" << std::endl;
                 program = std::shared_ptr<Program>(syntaxResult);
                 SemanticAnalyser analyser(program);
