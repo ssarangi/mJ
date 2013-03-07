@@ -16,6 +16,9 @@
     <Filter Include="grammar">
       <UniqueIdentifier>{2a5622ec-856d-464d-b5ac-9f41daf93f48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="examples">
+      <UniqueIdentifier>{5a6ab034-c092-45db-9f35-a52df2a91a38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ast.cpp">
@@ -103,5 +106,16 @@
     <ClInclude Include="include\parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="examples\test_class.java">
+      <Filter>examples</Filter>
+    </None>
+    <None Include="examples\test_file.java">
+      <Filter>examples</Filter>
+    </None>
+    <None Include="examples\test_function.java">
+      <Filter>examples</Filter>
+    </None>
   </ItemGroup>
 </Project>

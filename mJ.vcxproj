@@ -129,6 +129,11 @@ rm $(ProjectDir)src/parser.cpp.output</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\include\parser.h</AdditionalInputs>
     </CustomBuild>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="examples\test_class.java" />
+    <None Include="examples\test_file.java" />
+    <None Include="examples\test_function.java" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
