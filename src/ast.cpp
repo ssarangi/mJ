@@ -84,7 +84,10 @@ void StmtList::insert(StmtList* stmtList)
     stmts.insert(stmts.end(), stmtList->stmts.begin(), stmtList->stmts.end());
 }
 
-ClassDecl::ClassDecl(Identifier* classId, VarList* varList, MethodList* methodList) : classId(classId), varList(varList), methodList(methodList) 
+ClassDecl::ClassDecl(Identifier* classId, VarList* varList, MethodList* methodList)
+    : classId(classId)
+    , varList(varList)
+    , methodList(methodList) 
 {
 }
 
@@ -119,7 +122,8 @@ NormalClassDecl::NormalClassDecl(Identifier* classId, VarList* varList, MethodLi
 }
 
 ExtendsClassDecl::ExtendsClassDecl(Identifier* classId, Identifier* classExtendsId, VarList* varList, MethodList* methodList) 
-    : ClassDecl(classId, varList, methodList), classExtendsId(classExtendsId) 
+    : ClassDecl(classId, varList, methodList)
+    , classExtendsId(classExtendsId) 
 {
 }
 
