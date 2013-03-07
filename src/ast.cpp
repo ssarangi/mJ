@@ -107,7 +107,7 @@ Program::Program(MainClass* mainClass, ClassList* classList)
     : mainClass(mainClass)
     , classList(classList) 
 {
-} 
+}
 
 MainClass::MainClass(Identifier* classId, Identifier* stringArrayId, StmtList* stmtList) 
     : classId(classId) 
