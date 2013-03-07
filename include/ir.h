@@ -2,9 +2,11 @@
 #define __IR_H__
 
 #include <memory>
-
 #include <string>
 #include <vector>
+
+namespace mJ
+{
 
 namespace Temp 
 {
@@ -164,7 +166,9 @@ struct StmLabel : public Stm
 	std::shared_ptr<Temp::Label> label;
 };
 
-}
+} // End of namespace Tree
+
+} // End of namespace mJ
 
 #endif
 

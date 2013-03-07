@@ -1,7 +1,11 @@
 #include "translate.h"
 #include "ir.h"
 
+#include <memory>
 #include <assert.h>
+
+namespace mJ
+{
 
 std::shared_ptr<Tree::Exp> Translate::translate(std::shared_ptr<Exp> exp) 
 {
@@ -98,5 +102,5 @@ std::shared_ptr<Tree::Exp> Translate::translate(std::shared_ptr<FalseExp> falseE
     return std::shared_ptr<Tree::Const>(new Tree::Const(0));
 }
 
-
+} // End of namespace mJ
 

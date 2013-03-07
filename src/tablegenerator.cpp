@@ -1,5 +1,8 @@
 #include "tablegenerator.h"
 
+namespace mJ
+{
+
 TableGenerator::TableGenerator(std::shared_ptr<Program> program) 
     : program(program) 
 {
@@ -212,3 +215,5 @@ void TableGenerator::visit(std::shared_ptr<IdExp> exp)
 void TableGenerator::visit(std::shared_ptr<ThisExp> exp) 
 {
 }
+
+} // End of namespace mJ

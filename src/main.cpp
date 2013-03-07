@@ -8,9 +8,10 @@
 
 extern int yyparse();
 extern FILE* yyin;
-extern Program* syntaxResult;
 
-std::shared_ptr<Program> program;
+extern mJ::Program* syntaxResult;
+
+std::shared_ptr<mJ::Program> program;
 
 int main(int ac, char** av)
 {
@@ -36,8 +37,8 @@ int main(int ac, char** av)
             if(!only_parse) 
             {
                 std::cout << "Semantic analysis" << std::endl;
-                program = std::shared_ptr<Program>(syntaxResult);
-                SemanticAnalyser analyser(program);
+                program = std::shared_ptr<mJ::Program>(syntaxResult);
+                mJ::SemanticAnalyser analyser(program);
                 analyser.checkProgram();
             }
             return 0;

@@ -2,26 +2,26 @@ typedef union {
 	int itype;
 	char* stype;
 
-	Type* type;
+	mJ::Type* type;
 	
-	ExpList* expList;
-	ClassList* classList;
-	VarList* varList;
-	MethodList* methodList;
-	ArgumentList* argumentList;
-	StmtList* stmtList;
+	mJ::ExpList* expList;
+	mJ::ClassList* classList;
+	mJ::VarList* varList;
+	mJ::MethodList* methodList;
+	mJ::ArgumentList* argumentList;
+	mJ::StmtList* stmtList;
 
-	Program* program;
-	MainClass* mainClass;
-	ClassDecl* classDecl;
-	VarDecl* varDecl;
-	MethodDecl* methodDecl;
-	MainMethodDecl* mainMethodDecl;
-	Stmt* stmt;
-	Exp* exp;
-	Argument* argument;
+	mJ::Program* program;
+	mJ::MainClass* mainClass;
+	mJ::ClassDecl* classDecl;
+	mJ::VarDecl* varDecl;
+	mJ::MethodDecl* methodDecl;
+	mJ::MainMethodDecl* mainMethodDecl;
+	mJ::Stmt* stmt;
+	mJ::Exp* exp;
+	mJ::Argument* argument;
 
-	Identifier* identifier;
+	mJ::Identifier* identifier;
 } YYSTYPE;
 #define	TIf	258
 #define	TElse	259

@@ -1,5 +1,8 @@
 #include "ast.h"
 
+namespace mJ
+{
+
 ExpList::ExpList() 
 {
 }
@@ -327,3 +330,5 @@ ThisExp::ThisExp()
     : Exp() 
 {
 }
+
+} // End of namespace mJ

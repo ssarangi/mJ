@@ -4,6 +4,9 @@
 #include <string>
 #include <vector>
 
+namespace mJ
+{
+
 enum SymbolType 
 {
 	UndefinedSymbol,
@@ -29,5 +32,7 @@ private:
 	SymbolType type;
 	std::vector<std::string> arguments;
 };
+
+} // End of namespace
 
 #endif

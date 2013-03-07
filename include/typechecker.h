@@ -5,8 +5,13 @@
 #include "symboltable.h"
 #include "visitor.h"
 #include "tablegenerator.h"
+
 #include <string>
 #include <map>
+#include <memory>
+
+namespace mJ
+{
 
 class TypeChecker 
 {
@@ -65,5 +70,7 @@ private:
 	std::vector<std::string> errors;
 	std::string classScope;
 };
+
+} // End of namespace mJ
 
 #endif

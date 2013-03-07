@@ -622,8 +622,9 @@ YY_DECL
 #line 23 "..\\grammar\\lex.ll"
 
 
-	/* Reserved words */
-#line 627 "lexer.cpp"
+				/* Reserved words */
+
+#line 628 "lexer.cpp"
 
 	if ( yy_init )
 		{
@@ -708,249 +709,249 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 26 "..\\grammar\\lex.ll"
+#line 27 "..\\grammar\\lex.ll"
 return TIf;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 27 "..\\grammar\\lex.ll"
+#line 28 "..\\grammar\\lex.ll"
 return TElse;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 28 "..\\grammar\\lex.ll"
+#line 29 "..\\grammar\\lex.ll"
 return TWhile;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 29 "..\\grammar\\lex.ll"
+#line 30 "..\\grammar\\lex.ll"
 return TClass;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 30 "..\\grammar\\lex.ll"
+#line 31 "..\\grammar\\lex.ll"
 return TExtends;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 31 "..\\grammar\\lex.ll"
+#line 32 "..\\grammar\\lex.ll"
 return TPublic;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 32 "..\\grammar\\lex.ll"
+#line 33 "..\\grammar\\lex.ll"
 return TStatic;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 33 "..\\grammar\\lex.ll"
+#line 34 "..\\grammar\\lex.ll"
 return TVoid;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 34 "..\\grammar\\lex.ll"
+#line 35 "..\\grammar\\lex.ll"
 return TMain;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 35 "..\\grammar\\lex.ll"
+#line 36 "..\\grammar\\lex.ll"
 return TMainClass;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 36 "..\\grammar\\lex.ll"
+#line 37 "..\\grammar\\lex.ll"
 return TBoolean;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 37 "..\\grammar\\lex.ll"
+#line 38 "..\\grammar\\lex.ll"
 return TInteger;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 38 "..\\grammar\\lex.ll"
+#line 39 "..\\grammar\\lex.ll"
 return TString;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 39 "..\\grammar\\lex.ll"
+#line 40 "..\\grammar\\lex.ll"
 return TTrue;
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 40 "..\\grammar\\lex.ll"
+#line 41 "..\\grammar\\lex.ll"
 return TFalse;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 41 "..\\grammar\\lex.ll"
+#line 42 "..\\grammar\\lex.ll"
 return TThis;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 42 "..\\grammar\\lex.ll"
+#line 43 "..\\grammar\\lex.ll"
 return TNew;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 43 "..\\grammar\\lex.ll"
+#line 44 "..\\grammar\\lex.ll"
 return TPrintln;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 44 "..\\grammar\\lex.ll"
+#line 45 "..\\grammar\\lex.ll"
 return TReturn;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 45 "..\\grammar\\lex.ll"
+#line 46 "..\\grammar\\lex.ll"
 return TArrayLength;
 	YY_BREAK
 /* Constants */
 case 21:
 YY_RULE_SETUP
-#line 48 "..\\grammar\\lex.ll"
-{ yylval.identifier = new Identifier(std::string(yytext)); return TId; }
+#line 50 "..\\grammar\\lex.ll"
+{ yylval.identifier = new mJ::Identifier(std::string(yytext)); return TId; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 49 "..\\grammar\\lex.ll"
+#line 51 "..\\grammar\\lex.ll"
 { yylval.itype = atoi(yytext); return TNumber; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 50 "..\\grammar\\lex.ll"
+#line 52 "..\\grammar\\lex.ll"
 { yylval.stype = strdup(yytext); return TText; }
 	YY_BREAK
 /* Operators */
 case 24:
 YY_RULE_SETUP
-#line 53 "..\\grammar\\lex.ll"
+#line 55 "..\\grammar\\lex.ll"
 return TAssignment;
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 54 "..\\grammar\\lex.ll"
+#line 56 "..\\grammar\\lex.ll"
 return TNot;
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 55 "..\\grammar\\lex.ll"
+#line 57 "..\\grammar\\lex.ll"
 return TAnd;
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 56 "..\\grammar\\lex.ll"
+#line 58 "..\\grammar\\lex.ll"
 return TOr;
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 57 "..\\grammar\\lex.ll"
+#line 59 "..\\grammar\\lex.ll"
 return TLessThan;
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 58 "..\\grammar\\lex.ll"
+#line 60 "..\\grammar\\lex.ll"
 return TGreaterThan;
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 59 "..\\grammar\\lex.ll"
+#line 61 "..\\grammar\\lex.ll"
 return TDifferent;
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 60 "..\\grammar\\lex.ll"
+#line 62 "..\\grammar\\lex.ll"
 return TEqual;
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 61 "..\\grammar\\lex.ll"
+#line 63 "..\\grammar\\lex.ll"
 return TPlus;
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 62 "..\\grammar\\lex.ll"
+#line 64 "..\\grammar\\lex.ll"
 return TMinus;
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 63 "..\\grammar\\lex.ll"
+#line 65 "..\\grammar\\lex.ll"
 return TTimes;
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 64 "..\\grammar\\lex.ll"
+#line 66 "..\\grammar\\lex.ll"
 return TMember;
 	YY_BREAK
 /* { ( [ , ; */
 case 36:
 YY_RULE_SETUP
-#line 67 "..\\grammar\\lex.ll"
+#line 70 "..\\grammar\\lex.ll"
 return TLParen;
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 68 "..\\grammar\\lex.ll"
+#line 71 "..\\grammar\\lex.ll"
 return TRParen;
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 69 "..\\grammar\\lex.ll"
+#line 72 "..\\grammar\\lex.ll"
 return TLBracket;
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 70 "..\\grammar\\lex.ll"
+#line 73 "..\\grammar\\lex.ll"
 return TRBracket;
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 71 "..\\grammar\\lex.ll"
+#line 74 "..\\grammar\\lex.ll"
 return TLBraces;
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 72 "..\\grammar\\lex.ll"
+#line 75 "..\\grammar\\lex.ll"
 return TRBraces;
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 73 "..\\grammar\\lex.ll"
+#line 76 "..\\grammar\\lex.ll"
 return TComma;
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 74 "..\\grammar\\lex.ll"
+#line 77 "..\\grammar\\lex.ll"
 return TSemiColon;
 	YY_BREAK
 /* Ignored */
 case 44:
 YY_RULE_SETUP
-#line 77 "..\\grammar\\lex.ll"
+#line 81 "..\\grammar\\lex.ll"
 /* Comment */
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 78 "..\\grammar\\lex.ll"
+#line 82 "..\\grammar\\lex.ll"
 /* Comment */
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 79 "..\\grammar\\lex.ll"
+#line 83 "..\\grammar\\lex.ll"
 /* Whitespace */
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 80 "..\\grammar\\lex.ll"
+#line 84 "..\\grammar\\lex.ll"
 {yylinenumber++;}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 82 "..\\grammar\\lex.ll"
+#line 86 "..\\grammar\\lex.ll"
 ECHO;
 	YY_BREAK
-#line 954 "lexer.cpp"
+#line 955 "lexer.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1810,4 +1811,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 82 "..\\grammar\\lex.ll"
+#line 86 "..\\grammar\\lex.ll"

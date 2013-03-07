@@ -1,9 +1,45 @@
 #ifndef __VISITOR_H__
 #define __VISITOR_H__
 
-#include "ast.h"
-
 #include <memory>
+
+namespace mJ
+{
+
+struct Program;
+struct MainClass;
+struct NormalClassDecl;
+struct ExtendsClassDecl;
+struct VarDecl;
+struct MethodDecl;
+struct Argument;
+struct NestedStmt;
+struct IfStmt;
+struct WhileStmt;
+struct PrintlnStmt;
+struct AssignmentStmt;
+struct ArrayAssignmentStmt;
+struct VarDeclStmt;
+struct OrExp;
+struct AndExp;
+struct LessThanExp;
+struct GreaterThanExp;
+struct DifferentExp;
+struct EqualExp;
+struct PlusExp;
+struct MinusExp;
+struct TimesExp;
+struct ArrayValueExp;
+struct ArrayLengthExp;
+struct MemberFunctionExp;
+struct NewIntArrayExp;
+struct NewIdExp;
+struct NotExp;
+struct NumberExp;
+struct TrueExp;
+struct FalseExp;
+struct IdExp;
+struct ThisExp;
 
 class Visitor 
 {
@@ -45,5 +81,7 @@ public:
 	virtual void visit(std::shared_ptr<IdExp> exp) = 0;
 	virtual void visit(std::shared_ptr<ThisExp> exp) = 0;
 };
+
+} // End of namespace mJ
 
 #endif

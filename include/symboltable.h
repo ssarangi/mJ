@@ -4,11 +4,13 @@
 #include "symbol.h"
 
 #include <memory>
-
 #include <string>
 #include <map>
 #include <vector>
 #include <list>
+
+namespace mJ
+{
 
 typedef std::map<std::string, std::shared_ptr<Symbol> > SymbolMap;
 
@@ -26,9 +28,11 @@ public:
 	std::vector<std::string> getErrors();
 
 private:
-	std::vector<std::string> errors;
-	std::list<std::shared_ptr<SymbolMap> > symbols;
-	std::shared_ptr<SymbolMap> currentMap;
+	::std::vector<std::string> errors;
+	::std::list<std::shared_ptr<SymbolMap> > symbols;
+	::std::shared_ptr<SymbolMap> currentMap;
 };
+
+} // End of namespace
 
 #endif

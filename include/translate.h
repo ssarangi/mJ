@@ -3,6 +3,11 @@
 
 #include "ast.h"
 
+#include <memory>
+
+namespace mJ
+{
+
 struct Program;
 
 namespace Tree 
@@ -13,7 +18,7 @@ namespace Tree
 class Translate 
 {
 	static std::shared_ptr<Tree::Exp> translate(std::shared_ptr<Exp> exp);
-	static std::shared_ptr<Tree::Exp> translate(std::shared_ptr<OrExp> OrExp);
+	static std::shared_ptr<Tree::Exp> translate(std::shared_ptr<OrExp> orExp);
 	static std::shared_ptr<Tree::Exp> translate(std::shared_ptr<AndExp> andExp);
 	static std::shared_ptr<Tree::Exp> translate(std::shared_ptr<GreaterThanExp> greaterThanExp);
 	static std::shared_ptr<Tree::Exp> translate(std::shared_ptr<DifferentExp> differentExp);
@@ -25,6 +30,8 @@ class Translate
 	static std::shared_ptr<Tree::Exp> translate(std::shared_ptr<TrueExp> trueExp);
 	static std::shared_ptr<Tree::Exp> translate(std::shared_ptr<FalseExp> falseExp);
 };
+
+} // End of namespace mJ
 
 #endif
 

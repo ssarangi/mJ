@@ -1,5 +1,8 @@
 #include "symbol.h"
 
+namespace mJ
+{
+
 Symbol::Symbol(std::string name, SymbolType type) : name(name), type(type) 
 {
 	returnType = "_undeclared_type";
@@ -34,3 +37,5 @@ std::string Symbol::getReturn()
 {
 	return returnType;
 }
+
+} // End of namespace mJ

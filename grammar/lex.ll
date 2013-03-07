@@ -15,14 +15,15 @@ extern YYSTYPE yylval;
 #define isatty _isatty
 %}
 
-	/* Basics */
+					/* Basics */
 alpha [A-Za-z]
 digit [0-9]
 alphanum ({alpha}|{digit})
 
 %%
 
-	/* Reserved words */
+				/* Reserved words */
+
 "if"											return TIf;
 "else"											return TElse;
 "while"											return TWhile;
@@ -44,12 +45,13 @@ alphanum ({alpha}|{digit})
 "return"										return TReturn;
 "length"										return TArrayLength;
 
-	/* Constants */
-{alpha}({alphanum}|"_")*		{ yylval.identifier = new Identifier(std::string(yytext)); return TId; }
-{digit}+										{ yylval.itype = atoi(yytext); return TNumber; }
-\"(.|"\n")*\"								{ yylval.stype = strdup(yytext); return TText; }
+				  /* Constants */
 
-	/* Operators */
+{alpha}({alphanum}|"_")*		                { yylval.identifier = new mJ::Identifier(std::string(yytext)); return TId; }
+{digit}+										{ yylval.itype = atoi(yytext); return TNumber; }
+\"(.|"\n")*\"								    { yylval.stype = strdup(yytext); return TText; }
+
+				 /* Operators */
 "="													return TAssignment;
 "!"													return TNot;
 "&&"												return TAnd;
@@ -63,7 +65,8 @@ alphanum ({alpha}|{digit})
 "*"													return TTimes;
 "."													return TMember;
 
-	/* { ( [ , ; */
+				 /* { ( [ , ; */
+
 "("													return TLParen;
 ")"													return TRParen;
 "["													return TLBracket;
@@ -73,10 +76,11 @@ alphanum ({alpha}|{digit})
 ","													return TComma;
 ";"													return TSemiColon;
 
-	/* Ignored */
-"//".*"\n"									/* Comment */
-"/*"(.|"\n")*"*\\"					/* Comment */
-[ \t\r]											/* Whitespace */
+				 /* Ignored */
+
+"//".*"\n"									        /* Comment */
+"/*"(.|"\n")*"*\\"					                /* Comment */
+[ \t\r]											    /* Whitespace */
 "\n"												{yylinenumber++;}
 
 %%

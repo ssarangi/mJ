@@ -2,8 +2,10 @@
 #define __TEMP_H__
 
 #include <memory>
-
 #include <string>
+
+namespace mJ
+{
 
 class Symbol;
 
@@ -39,7 +41,9 @@ struct LabelList
 	LabelList();
 };
 
-}
+} // End of namespace Temp
+
+} // End of namespace mJ
 
 #endif
 

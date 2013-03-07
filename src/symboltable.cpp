@@ -2,6 +2,9 @@
 #include <iostream>
 #include <memory>
 
+namespace mJ
+{
+
 SymbolTable::SymbolTable() 
 {
     currentMap = std::shared_ptr<SymbolMap>(new SymbolMap());
@@ -77,3 +80,5 @@ std::vector<std::string> SymbolTable::getErrors()
 {
     return errors;
 }
+
+} // End of namespace mJ

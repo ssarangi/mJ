@@ -1,6 +1,9 @@
 #include "temp.h"
 #include "symbol.h"
 
+namespace mJ
+{
+
 namespace Temp 
 {
 
@@ -30,5 +33,6 @@ LabelList::LabelList()
 {
 }
 
-}
+} // End of namespace Temp
 
+} // End of namespace mJ

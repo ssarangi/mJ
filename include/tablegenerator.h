@@ -4,8 +4,13 @@
 #include "ast.h"
 #include "symboltable.h"
 #include "visitor.h"
+
 #include <string>
 #include <map>
+#include <memory>
+
+namespace mJ
+{
 
 typedef std::map<std::string, std::shared_ptr<SymbolTable> > MethodMap;
 
@@ -61,5 +66,7 @@ private:
 	std::string classScope;
 	std::string methodScope;
 };
+
+} // End of namespace mJ
 
 #endif

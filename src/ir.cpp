@@ -2,6 +2,9 @@
 
 #include "temp.h"
 
+namespace mJ
+{
+
 namespace Tree 
 {
 
@@ -114,6 +117,6 @@ StmLabel::StmLabel(std::shared_ptr<Temp::Label> label)
 {
 }
 
-}
+} // End of namespace Tree
 
-
+} // End of namespace mJ

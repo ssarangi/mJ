@@ -1,6 +1,9 @@
 #include "typechecker.h"
 #include <memory>
 
+namespace mJ
+{
+
 TypeChecker::TypeChecker(std::shared_ptr<Program> program) 
     : program(program) 
 {
@@ -482,3 +485,5 @@ std::vector<std::string> TypeChecker::getErrors()
 {
     return errors;
 }
+
+} // End of namespace mJ

@@ -1,14 +1,19 @@
 #include "semantic.h"
 #include "symboltable.h"
 #include "typechecker.h"
-#include <iostream>
 
-SemanticAnalyser::SemanticAnalyser(std::shared_ptr<Program> program) 
+#include <iostream>
+#include <memory>
+
+namespace mJ
+{
+
+SemanticAnalyser::SemanticAnalyser(std::shared_ptr<mJ::Program> program) 
     : program(program) 
 {
 }
 
-SemanticAnalyser::~SemanticAnalyser() 
+SemanticAnalyser::~SemanticAnalyser()
 {
 }
 
@@ -41,3 +46,5 @@ void SemanticAnalyser::printErrors()
         }
     }
 }
+
+} // End of namespace mJ

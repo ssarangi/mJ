@@ -56,32 +56,32 @@
 extern int yylex();
 int yyerror(char * msg);
 extern int yylinenumber;
-Program* syntaxResult;
+mJ::Program* syntaxResult;
 
 typedef union {
 	int itype;
 	char* stype;
 
-	Type* type;
+	mJ::Type* type;
 	
-	ExpList* expList;
-	ClassList* classList;
-	VarList* varList;
-	MethodList* methodList;
-	ArgumentList* argumentList;
-	StmtList* stmtList;
+	mJ::ExpList* expList;
+	mJ::ClassList* classList;
+	mJ::VarList* varList;
+	mJ::MethodList* methodList;
+	mJ::ArgumentList* argumentList;
+	mJ::StmtList* stmtList;
 
-	Program* program;
-	MainClass* mainClass;
-	ClassDecl* classDecl;
-	VarDecl* varDecl;
-	MethodDecl* methodDecl;
-	MainMethodDecl* mainMethodDecl;
-	Stmt* stmt;
-	Exp* exp;
-	Argument* argument;
+	mJ::Program* program;
+	mJ::MainClass* mainClass;
+	mJ::ClassDecl* classDecl;
+	mJ::VarDecl* varDecl;
+	mJ::MethodDecl* methodDecl;
+	mJ::MainMethodDecl* mainMethodDecl;
+	mJ::Stmt* stmt;
+	mJ::Exp* exp;
+	mJ::Argument* argument;
 
-	Identifier* identifier;
+	mJ::Identifier* identifier;
 } YYSTYPE;
 
 #ifndef YYLTYPE
@@ -839,175 +839,175 @@ yyreduce:
   switch (yyn) {
 
 case 1:
-{ syntaxResult = new Program(yyvsp[-1].mainClass, yyvsp[0].classList); yyval.program = syntaxResult; ;
+{ syntaxResult = new mJ::Program(yyvsp[-1].mainClass, yyvsp[0].classList); yyval.program = syntaxResult; ;
     break;}
 case 2:
-{ yyval.mainClass = new MainClass(yyvsp[-1].mainMethodDecl); ;
+{ yyval.mainClass = new mJ::MainClass(yyvsp[-1].mainMethodDecl); ;
     break;}
 case 3:
-{ yyval.mainMethodDecl = new MainMethodDecl(yyvsp[-4].identifier, yyvsp[-1].stmtList); ;
+{ yyval.mainMethodDecl = new mJ::MainMethodDecl(yyvsp[-4].identifier, yyvsp[-1].stmtList); ;
     break;}
 case 4:
-{ MethodList* list = new MethodList(); list->insert(yyvsp[-1].methodDecl); list->insert(yyvsp[0].methodList); yyval.methodList = list; delete yyvsp[0].methodList; ;
+{ mJ::MethodList* list = new mJ::MethodList(); list->insert(yyvsp[-1].methodDecl); list->insert(yyvsp[0].methodList); yyval.methodList = list; delete yyvsp[0].methodList; ;
     break;}
 case 5:
-{ yyval.methodList = new MethodList(); ;
+{ yyval.methodList = new mJ::MethodList(); ;
     break;}
 case 7:
-{ VarList* list = new VarList(); list->insert(yyvsp[-1].varDecl); list->insert(yyvsp[0].varList); yyval.varList = list; delete yyvsp[0].varList; ;
+{ mJ::VarList* list = new mJ::VarList(); list->insert(yyvsp[-1].varDecl); list->insert(yyvsp[0].varList); yyval.varList = list; delete yyvsp[0].varList; ;
     break;}
 case 8:
-{ yyval.varList = new VarList(); ;
+{ yyval.varList = new mJ::VarList(); ;
     break;}
 case 9:
-{ ClassList* list = new ClassList(); list->insert(yyvsp[-1].classDecl); list->insert(yyvsp[0].classList); yyval.classList = list; delete yyvsp[0].classList; ;
+{ mJ::ClassList* list = new mJ::ClassList(); list->insert(yyvsp[-1].classDecl); list->insert(yyvsp[0].classList); yyval.classList = list; delete yyvsp[0].classList; ;
     break;}
 case 10:
-{ yyval.classList = new ClassList(); ;
+{ yyval.classList = new mJ::ClassList(); ;
     break;}
 case 11:
-{ yyval.classDecl = new NormalClassDecl(yyvsp[-4].identifier, yyvsp[-2].varList, yyvsp[-1].methodList); ;
+{ yyval.classDecl = new mJ::NormalClassDecl(yyvsp[-4].identifier, yyvsp[-2].varList, yyvsp[-1].methodList); ;
     break;}
 case 12:
-{ yyval.classDecl = new ExtendsClassDecl(yyvsp[-6].identifier, yyvsp[-4].identifier, yyvsp[-2].varList, yyvsp[-1].methodList); ;
+{ yyval.classDecl = new mJ::ExtendsClassDecl(yyvsp[-6].identifier, yyvsp[-4].identifier, yyvsp[-2].varList, yyvsp[-1].methodList); ;
     break;}
 case 13:
-{ yyval.varDecl = new VarDecl(yyvsp[-2].type, yyvsp[-1].identifier); ;
+{ yyval.varDecl = new mJ::VarDecl(yyvsp[-2].type, yyvsp[-1].identifier); ;
     break;}
 case 14:
-{ yyval.methodDecl = new MethodDecl(yyvsp[-10].type, yyvsp[-9].identifier, yyvsp[-7].argumentList, yyvsp[-4].stmtList, yyvsp[-2].exp); ;
+{ yyval.methodDecl = new mJ::MethodDecl(yyvsp[-10].type, yyvsp[-9].identifier, yyvsp[-7].argumentList, yyvsp[-4].stmtList, yyvsp[-2].exp); ;
     break;}
 case 15:
-{ ArgumentList* list = new ArgumentList(); list->insert(yyvsp[-1].argument); list->insert(yyvsp[0].argumentList); yyval.argumentList = list; delete yyvsp[0].argumentList; ;
+{ mJ::ArgumentList* list = new mJ::ArgumentList(); list->insert(yyvsp[-1].argument); list->insert(yyvsp[0].argumentList); yyval.argumentList = list; delete yyvsp[0].argumentList; ;
     break;}
 case 16:
-{ yyval.argumentList = new ArgumentList(); ;
+{ yyval.argumentList = new mJ::ArgumentList(); ;
     break;}
 case 17:
-{ ArgumentList* list = new ArgumentList(); list->insert(yyvsp[-1].argument); list->insert(yyvsp[0].argumentList); yyval.argumentList = list; delete yyvsp[0].argumentList; ;
+{ mJ::ArgumentList* list = new mJ::ArgumentList(); list->insert(yyvsp[-1].argument); list->insert(yyvsp[0].argumentList); yyval.argumentList = list; delete yyvsp[0].argumentList; ;
     break;}
 case 18:
-{ yyval.argumentList = new ArgumentList(); ;
+{ yyval.argumentList = new mJ::ArgumentList(); ;
     break;}
 case 19:
-{ yyval.argument = new Argument(yyvsp[-1].type, yyvsp[0].identifier); ;
+{ yyval.argument = new mJ::Argument(yyvsp[-1].type, yyvsp[0].identifier); ;
     break;}
 case 20:
-{ yyval.type = new Type("int[]"); ;
+{ yyval.type = new mJ::Type("int[]"); ;
     break;}
 case 21:
-{ yyval.type = new Type("String[]"); ;
+{ yyval.type = new mJ::Type("String[]"); ;
     break;}
 case 22:
-{ yyval.type = new Type("bool"); ;
+{ yyval.type = new mJ::Type("bool"); ;
     break;}
 case 23:
-{ yyval.type = new Type("int"); ;
+{ yyval.type = new mJ::Type("int"); ;
     break;}
 case 24:
-{ yyval.type = new Type(yyvsp[0].identifier->name); delete yyvsp[0].identifier; ;
+{ yyval.type = new mJ::Type(yyvsp[0].identifier->name); delete yyvsp[0].identifier; ;
     break;}
 case 25:
-{ StmtList* list = new StmtList(); list->insert(yyvsp[-1].stmt); list->insert(yyvsp[0].stmtList); yyval.stmtList = list; delete yyvsp[0].stmtList; ;
+{ mJ::StmtList* list = new mJ::StmtList(); list->insert(yyvsp[-1].stmt); list->insert(yyvsp[0].stmtList); yyval.stmtList = list; delete yyvsp[0].stmtList; ;
     break;}
 case 26:
-{ yyval.stmtList = new StmtList(); ;
+{ yyval.stmtList = new mJ::StmtList(); ;
     break;}
 case 27:
-{ yyval.stmt = new NestedStmt(yyvsp[-1].stmtList); ;
+{ yyval.stmt = new mJ::NestedStmt(yyvsp[-1].stmtList); ;
     break;}
 case 28:
-{ yyval.stmt = new IfStmt(yyvsp[-4].exp, yyvsp[-2].stmt, yyvsp[0].stmt); ;
+{ yyval.stmt = new mJ::IfStmt(yyvsp[-4].exp, yyvsp[-2].stmt, yyvsp[0].stmt); ;
     break;}
 case 29:
-{ yyval.stmt = new WhileStmt(yyvsp[-2].exp, yyvsp[0].stmt); ;
+{ yyval.stmt = new mJ::WhileStmt(yyvsp[-2].exp, yyvsp[0].stmt); ;
     break;}
 case 30:
-{ yyval.stmt = new PrintlnStmt(yyvsp[-2].exp); ;
+{ yyval.stmt = new mJ::PrintlnStmt(yyvsp[-2].exp); ;
     break;}
 case 31:
-{ yyval.stmt = new AssignmentStmt(yyvsp[-3].identifier, yyvsp[-1].exp); ;
+{ yyval.stmt = new mJ::AssignmentStmt(yyvsp[-3].identifier, yyvsp[-1].exp); ;
     break;}
 case 32:
-{ yyval.stmt = new ArrayAssignmentStmt(yyvsp[-6].identifier, yyvsp[-4].exp, yyvsp[-1].exp); ;
+{ yyval.stmt = new mJ::ArrayAssignmentStmt(yyvsp[-6].identifier, yyvsp[-4].exp, yyvsp[-1].exp); ;
     break;}
 case 33:
-{ yyval.stmt = new VarDeclStmt(yyvsp[0].varDecl); ;
+{ yyval.stmt = new mJ::VarDeclStmt(yyvsp[0].varDecl); ;
     break;}
 case 34:
-{ ExpList* list = new ExpList(); list->insert(yyvsp[-1].exp); list->insert(yyvsp[0].expList); yyval.expList = list; delete yyvsp[0].expList; ;
+{ mJ::ExpList* list = new mJ::ExpList(); list->insert(yyvsp[-1].exp); list->insert(yyvsp[0].expList); yyval.expList = list; delete yyvsp[0].expList; ;
     break;}
 case 35:
-{ yyval.expList = new ExpList(); ;
+{ yyval.expList = new mJ::ExpList(); ;
     break;}
 case 36:
-{ ExpList* list = new ExpList(); list->insert(yyvsp[-1].exp); list->insert(yyvsp[0].expList); yyval.expList = list; ;
+{ mJ::ExpList* list = new mJ::ExpList(); list->insert(yyvsp[-1].exp); list->insert(yyvsp[0].expList); yyval.expList = list; ;
     break;}
 case 37:
-{ yyval.expList = new ExpList(); ;
+{ yyval.expList = new mJ::ExpList(); ;
     break;}
 case 38:
-{ yyval.exp = new OrExp(yyvsp[-2].exp, yyvsp[0].exp); ;
+{ yyval.exp = new mJ::OrExp(yyvsp[-2].exp, yyvsp[0].exp); ;
     break;}
 case 39:
-{ yyval.exp = new AndExp(yyvsp[-2].exp, yyvsp[0].exp); ;
+{ yyval.exp = new mJ::AndExp(yyvsp[-2].exp, yyvsp[0].exp); ;
     break;}
 case 40:
-{ yyval.exp = new LessThanExp(yyvsp[-2].exp, yyvsp[0].exp); ;
+{ yyval.exp = new mJ::LessThanExp(yyvsp[-2].exp, yyvsp[0].exp); ;
     break;}
 case 41:
-{ yyval.exp = new GreaterThanExp(yyvsp[-2].exp, yyvsp[0].exp); ;
+{ yyval.exp = new mJ::GreaterThanExp(yyvsp[-2].exp, yyvsp[0].exp); ;
     break;}
 case 42:
-{ yyval.exp = new DifferentExp(yyvsp[-2].exp, yyvsp[0].exp); ;
+{ yyval.exp = new mJ::DifferentExp(yyvsp[-2].exp, yyvsp[0].exp); ;
     break;}
 case 43:
-{ yyval.exp = new EqualExp(yyvsp[-2].exp, yyvsp[0].exp); ;
+{ yyval.exp = new mJ::EqualExp(yyvsp[-2].exp, yyvsp[0].exp); ;
     break;}
 case 44:
-{ yyval.exp = new PlusExp(yyvsp[-2].exp, yyvsp[0].exp); ;
+{ yyval.exp = new mJ::PlusExp(yyvsp[-2].exp, yyvsp[0].exp); ;
     break;}
 case 45:
-{ yyval.exp = new MinusExp(yyvsp[-2].exp, yyvsp[0].exp); ;
+{ yyval.exp = new mJ::MinusExp(yyvsp[-2].exp, yyvsp[0].exp); ;
     break;}
 case 46:
-{ yyval.exp = new TimesExp(yyvsp[-2].exp, yyvsp[0].exp); ;
+{ yyval.exp = new mJ::TimesExp(yyvsp[-2].exp, yyvsp[0].exp); ;
     break;}
 case 47:
 { yyval.exp = yyvsp[0].exp; ;
     break;}
 case 48:
-{ yyval.exp = new ArrayValueExp(yyvsp[-3].exp, yyvsp[-1].exp); ;
+{ yyval.exp = new mJ::ArrayValueExp(yyvsp[-3].exp, yyvsp[-1].exp); ;
     break;}
 case 49:
-{ yyval.exp = new ArrayLengthExp(yyvsp[-2].exp); ;
+{ yyval.exp = new mJ::ArrayLengthExp(yyvsp[-2].exp); ;
     break;}
 case 50:
-{ yyval.exp = new MemberFunctionExp(yyvsp[-5].exp, yyvsp[-3].identifier, yyvsp[-1].expList); ;
+{ yyval.exp = new mJ::MemberFunctionExp(yyvsp[-5].exp, yyvsp[-3].identifier, yyvsp[-1].expList); ;
     break;}
 case 51:
-{ yyval.exp = new NumberExp(yyvsp[0].itype); ;
+{ yyval.exp = new mJ::NumberExp(yyvsp[0].itype); ;
     break;}
 case 52:
-{ yyval.exp = new TrueExp(); ;
+{ yyval.exp = new mJ::TrueExp(); ;
     break;}
 case 53:
-{ yyval.exp = new FalseExp(); ;
+{ yyval.exp = new mJ::FalseExp(); ;
     break;}
 case 54:
-{ yyval.exp = new IdExp(yyvsp[0].identifier); ;
+{ yyval.exp = new mJ::IdExp(yyvsp[0].identifier); ;
     break;}
 case 55:
-{ yyval.exp = new ThisExp(); ;
+{ yyval.exp = new mJ::ThisExp(); ;
     break;}
 case 56:
-{ yyval.exp = new NewIntArrayExp(yyvsp[-1].exp); ;
+{ yyval.exp = new mJ::NewIntArrayExp(yyvsp[-1].exp); ;
     break;}
 case 57:
-{ yyval.exp = new NewIdExp(yyvsp[-2].identifier); ;
+{ yyval.exp = new mJ::NewIdExp(yyvsp[-2].identifier); ;
     break;}
 case 58:
-{ yyval.exp = new NotExp(yyvsp[0].exp); ;
+{ yyval.exp = new mJ::NotExp(yyvsp[0].exp); ;
     break;}
 case 59:
 { yyval.exp = yyvsp[-1].exp; ;

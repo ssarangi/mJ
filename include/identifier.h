@@ -3,6 +3,9 @@
 
 #include <string>
 
+namespace mJ
+{
+
 class Identifier 
 {
 public:
@@ -10,5 +13,7 @@ public:
 
 	std::string name;
 };
+
+}
 
 #endif
